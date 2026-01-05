@@ -1,62 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hello</title>
+<meta charset="UTF-8">
+<title>Hello</title>
 
-  <style>
-    /* Full page center */
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
-      /* Gradient background */
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-      /* Dark mode text */
-      color: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+  h1 {
+    font-size: 64px;
+    margin-bottom: 10px;
+  }
 
-    h1 {
-      font-size: 72px;
-      margin-bottom: 15px;
-    }
+  p {
+    font-size: 26px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
 
-    p {
-      font-size: 32px;
-      opacity: 0.9;
-    }
+  /* Waving hand */
+  .wave {
+    display: inline-block;
+    animation: wave 2s infinite;
+    transform-origin: 70% 70%;
+  }
 
-    /* Waving hand animation */
-    .wave {
-      display: inline-block;
-      animation: wave-animation 2s infinite;
-      transform-origin: 70% 70%;
-    }
+  @keyframes wave {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
 
-    @keyframes wave-animation {
-      0% { transform: rotate(0deg); }
-      10% { transform: rotate(14deg); }
-      20% { transform: rotate(-8deg); }
-      30% { transform: rotate(14deg); }
-      40% { transform: rotate(-4deg); }
-      50% { transform: rotate(10deg); }
-      60% { transform: rotate(0deg); }
-      100% { transform: rotate(0deg); }
-    }
-  </style>
+  /* Game container */
+  iframe {
+    border: none;
+    width: 320px;
+    height: 220px;
+    background: #fff;
+    border-radius: 8px;
+  }
+
+  .hint {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+  }
+</style>
 </head>
 
 <body>
-  <div>
-    <h1>Hello <span class="wave">👋</span></h1>
-    <p>This is SRAVANTH's website . That’s all.</p>
-  </div>
+
+  <h1>Hello <span class="wave">👋</span></h1>
+  <p>This is SRAVANTH's website. That’s all.</p>
+
+  <!-- Dino Game -->
+  <iframe src="https://chromedino.com/"></iframe>
+  <div class="hint">Press SPACE or tap to jump 🦖</div>
+
 </body>
 </html>
 
