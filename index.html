@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Hello</title>
+
   <style>
+    /* Full page center */
     body {
       margin: 0;
       height: 100vh;
@@ -10,25 +13,52 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      font-family: Arial, sans-serif;
+
+      /* Gradient background */
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+
+      /* Dark mode text */
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     h1 {
-      font-size: 64px;
-      margin-bottom: 10px;
+      font-size: 72px;
+      margin-bottom: 15px;
     }
 
     p {
-      font-size: 28px;
+      font-size: 32px;
+      opacity: 0.9;
+    }
+
+    /* Waving hand animation */
+    .wave {
+      display: inline-block;
+      animation: wave-animation 2s infinite;
+      transform-origin: 70% 70%;
+    }
+
+    @keyframes wave-animation {
+      0% { transform: rotate(0deg); }
+      10% { transform: rotate(14deg); }
+      20% { transform: rotate(-8deg); }
+      30% { transform: rotate(14deg); }
+      40% { transform: rotate(-4deg); }
+      50% { transform: rotate(10deg); }
+      60% { transform: rotate(0deg); }
+      100% { transform: rotate(0deg); }
     }
   </style>
 </head>
+
 <body>
   <div>
-    <h1>Hello 👋</h1>
+    <h1>Hello <span class="wave">👋</span></h1>
     <p>This is SRAVANTH's website . That’s all.</p>
   </div>
 </body>
 </html>
+
 
 
