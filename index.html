@@ -48,18 +48,14 @@
   }
 
   button {
-    padding: 12px 24px;
-    font-size: 18px;
+    padding: 14px 28px;
+    font-size: 20px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    background: #00c6ff;
+    background: #00e5ff;
     color: #000;
-    margin: 8px;
-  }
-
-  button:hover {
-    opacity: 0.9;
+    margin: 10px;
   }
 
   #gameContainer {
@@ -68,16 +64,18 @@
   }
 
   iframe {
-    width: 320px;
-    height: 220px;
+    width: 90vw;
+    max-width: 900px;
+    height: 500px;
     border: none;
-    border-radius: 8px;
-    background: #fff;
+    border-radius: 12px;
+    background: black;
   }
 
-  #score {
+  .hint {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 16px;
+    opacity: 0.8;
   }
 </style>
 </head>
@@ -85,46 +83,32 @@
 <body>
 
   <h1>Hello <span class="wave">👋</span></h1>
-  <p>This is SRAVANTH"S website. That’s all.</p>
+  <p>This is SRAVANTH's website. That’s all.</p>
 
-  <p><strong>Bored?</strong> Play Dino 🦖</p>
+  <p><strong>Bored?</strong> Drive a car 🚗</p>
 
-  <button onclick="startGame()">▶ Play</button>
+  <button onclick="startGame()">▶ Play Car Game</button>
 
   <div id="gameContainer">
-    <iframe id="gameFrame" src="https://chromedino.com/"></iframe>
+    <iframe
+      src="https://slowroads.io/"
+      allowfullscreen>
+    </iframe>
 
-    <div id="score">Score: 0</div>
-
-    <button onclick="goFullscreen()">⛶ Fullscreen</button>
+    <div class="hint">
+      Controls: W / A / S / D or Arrow keys • Advanced options inside game ⚙️
+    </div>
   </div>
 
 <script>
-  let score = 0;
-  let scoreInterval;
-
   function startGame() {
     document.getElementById("gameContainer").style.display = "block";
-    score = 0;
-    document.getElementById("score").innerText = "Score: 0";
-
-    clearInterval(scoreInterval);
-    scoreInterval = setInterval(() => {
-      score++;
-      document.getElementById("score").innerText = "Score: " + score;
-    }, 1000);
-  }
-
-  function goFullscreen() {
-    const iframe = document.getElementById("gameFrame");
-    if (iframe.requestFullscreen) {
-      iframe.requestFullscreen();
-    }
   }
 </script>
 
 </body>
 </html>
+
 
 
 
