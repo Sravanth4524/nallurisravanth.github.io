@@ -2,114 +2,134 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Hello</title>
+<title>Sravanth's Games</title>
 
 <style>
   body {
     margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
+    font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
   }
 
-  h1 {
-    font-size: 64px;
-    margin-bottom: 10px;
+  header {
+    padding: 30px 10px;
+    font-size: 52px;
+    font-weight: bold;
   }
 
-  p {
-    font-size: 26px;
-    margin-bottom: 20px;
-    opacity: 0.9;
+  .categories {
+    margin: 20px;
   }
 
-  .wave {
-    display: inline-block;
-    animation: wave 2s infinite;
-    transform-origin: 70% 70%;
-  }
-
-  @keyframes wave {
-    0% { transform: rotate(0deg); }
-    10% { transform: rotate(14deg); }
-    20% { transform: rotate(-8deg); }
-    30% { transform: rotate(14deg); }
-    40% { transform: rotate(-4deg); }
-    50% { transform: rotate(10deg); }
-    60% { transform: rotate(0deg); }
-    100% { transform: rotate(0deg); }
-  }
-
-  button {
-    padding: 14px 28px;
-    font-size: 20px;
+  .categories button {
+    margin: 8px;
+    padding: 10px 18px;
+    font-size: 16px;
     border: none;
-    border-radius: 8px;
+    border-radius: 20px;
     cursor: pointer;
     background: #00e5ff;
     color: #000;
-    margin: 10px;
   }
 
-  #gameContainer {
+  .games {
     display: none;
-    margin-top: 20px;
+    margin: 30px auto;
+    max-width: 1100px;
   }
 
   iframe {
-    width: 90vw;
+    width: 90%;
     max-width: 900px;
     height: 500px;
-    border: none;
     border-radius: 12px;
+    border: none;
     background: black;
   }
 
+  .game-title {
+    font-size: 28px;
+    margin: 20px 0 10px;
+  }
+
   .hint {
-    margin-top: 10px;
-    font-size: 16px;
+    font-size: 14px;
     opacity: 0.8;
+    margin-bottom: 10px;
   }
 </style>
 </head>
 
 <body>
 
-  <h1>Hello <span class="wave">👋</span></h1>
-  <p>This is SRAVANTH's website. That’s all.</p>
+<header>🎮 Sravanth’s Games</header>
 
-  <p><strong>Bored?</strong> Drive a car 🚗</p>
+<div class="categories">
+  <button onclick="showGame('car')">🚗 Driving</button>
+  <button onclick="showGame('racing')">🏎️ Racing</button>
+  <button onclick="showGame('puzzle')">🧠 Puzzle</button>
+  <button onclick="showGame('arcade')">🎯 Arcade</button>
+  <button onclick="showGame('retro')">🕹️ Retro</button>
+</div>
 
-  <button onclick="startGame()">▶ Play Car Game</button>
+<!-- 🚗 DRIVING -->
+<div id="car" class="games">
+  <div class="game-title">🚗 Slow Roads (Steering Car)</div>
+  <div class="hint">Steering: Arrow keys / WASD / Touch / Tilt • Advanced settings inside ⚙️</div>
+  <iframe src="https://slowroads.io/" allowfullscreen></iframe>
+</div>
 
-  <div id="gameContainer">
-    <iframe
-      src="https://slowroads.io/"
-      allowfullscreen>
-    </iframe>
+<!-- 🏎️ RACING -->
+<div id="racing" class="games">
+  <div class="game-title">🏎️ Drift Hunters</div>
+  <iframe src="https://www.crazygames.com/embed/drift-hunters"></iframe>
 
-    <div class="hint">
-      Controls: W / A / S / D or Arrow keys • Advanced options inside game ⚙️
-    </div>
-  </div>
+  <div class="game-title">🚘 Madalin Cars</div>
+  <iframe src="https://www.crazygames.com/embed/madalin-cars-multiplayer"></iframe>
+</div>
+
+<!-- 🧠 PUZZLE -->
+<div id="puzzle" class="games">
+  <div class="game-title">🧠 2048</div>
+  <iframe src="https://play2048.co/"></iframe>
+
+  <div class="game-title">♟️ Chess</div>
+  <iframe src="https://www.chess.com/embed"></iframe>
+</div>
+
+<!-- 🎯 ARCADE -->
+<div id="arcade" class="games">
+  <div class="game-title">🎯 Slope</div>
+  <iframe src="https://www.crazygames.com/embed/slope"></iframe>
+
+  <div class="game-title">🌀 Helix Jump</div>
+  <iframe src="https://www.crazygames.com/embed/helix-jump"></iframe>
+</div>
+
+<!-- 🕹️ RETRO -->
+<div id="retro" class="games">
+  <div class="game-title">🐍 Snake</div>
+  <iframe src="https://playsnake.org/"></iframe>
+
+  <div class="game-title">👾 Pac-Man</div>
+  <iframe src="https://www.google.com/logos/2010/pacman10-i.html"></iframe>
+
+  <div class="game-title">🧱 Tetris</div>
+  <iframe src="https://tetris.com/play-tetris"></iframe>
+</div>
 
 <script>
-  function startGame() {
-    document.getElementById("gameContainer").style.display = "block";
+  function showGame(id) {
+    document.querySelectorAll('.games').forEach(g => g.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+    window.scrollTo({ top: 200, behavior: 'smooth' });
   }
 </script>
 
 </body>
 </html>
-
-
 
 
 
